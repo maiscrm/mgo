@@ -721,7 +721,7 @@ func (d *decoder) readElemTo(out reflect.Value, kind byte) (good bool) {
 		if i == -62135596800000 {
 			in = time.Time{} // In UTC for convenience.
 		} else {
-			in = time.Unix(i/1e3, i%1e3*1e6).UTC()
+			in = time.Unix(i/1e3, i%1e3*1e6)
 		}
 	case ElementNil:
 		in = nil
